@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3" *ngFor="let pokemon of arrayPokemons">
+      <div class="card mb-4 box-shadow border-danger mb-4 border">
+        <div class="card-header text-center bg-danger border-danger rounded-id-pokemon-header">#{{pokemon.id}}</div>
+        <img class="card-img-top" src="{{pokemon.image}}" data-holder-rendered="true" style="height: 125px; width: 50%; display: block;margin:0 auto;">
+        <div class="card-body text-center">
+          <h5 class="card-title text-center">{{pokemon.name}}</h5>
+          <button type="button" class="btn btn-info" (click)="openModal(template, pokemon)">
+            Detalhar
+          </button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <pagination [(ngModel)]="currentPage" (pageChanged)="pageChanged($event)" [boundaryLinks]="true" [itemsPerPage]="8" [totalItems]="pageDetail.count"
+    [maxSize]="8" [previousText]="'Voltar'" [nextText]="'Avançar'" [firstText]="'Primeira'" [lastText]="'Última'">
+  </pagination>
+</div>
+
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">
+      <img class="card-img-top" src="{{selected.image}}" data-holder-rendered="true" style="height: 155px; width: 155px;">      {{selected.name}}
+    </h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras egestas justo nibh, vel tincidunt libero auctor eget. Donec
+    molestie tempor dictum. In sollicitudin purus a faucibus ultrices. Nam quis ullamcorper dolor. Fusce gravida ante et
+    eros rhoncus tincidunt in a orci. Nullam tristique felis vel dui vestibulum, vitae sagittis odio commodo. Mauris purus
+    nunc, suscipit a velit quis, dictum sodales est. Phasellus malesuada accumsan auctor. Curabitur scelerisque pulvinar
+    ipsum sit amet interdum. Sed euismod lectus non arcu vestibulum, sit amet ultrices felis pharetra. Aenean suscipit tincidunt
+    nisl ac rhoncus. Nunc eget enim quam.
+  </div>
+</ng-template>

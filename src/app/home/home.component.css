@@ -1,0 +1,15 @@
+.rounded-50  {
+    -webkit-border-radius: 50px !important;
+    -moz-border-radius: 50px !important;
+    border-radius: 50px !important; 
+}
+
+.rounded-id-pokemon-header {
+    border-radius:  0 0 50px 50px;
+    margin: 0 auto;
+    color:white;
+    font-weight:bold;
+    height: 30px;
+    width: 50%;
+    padding: 0;
+}
