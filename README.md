@@ -1,6 +1,6 @@
 # Pokemon
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
+Esta aplicação foi criada para teste com base na API http://pokeapi.co/api/v2/pokemon/
 
 ## Development server
 
